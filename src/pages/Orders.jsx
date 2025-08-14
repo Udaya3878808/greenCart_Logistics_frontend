@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useOrder } from "../context/orderContext";
 import { useRoute } from "../context/routeContext";
+import { toast } from "react-hot-toast";
 
 const Orders = () => {
   const { getAllOrders, createOrder, updateOrder, deleteOrder } = useOrder();
@@ -46,6 +47,7 @@ const Orders = () => {
       assignedRoute: "",
       deliveryTimestamp: "",
     });
+    toast.success("Orders successfully added");
     fetchOrders();
   };
 

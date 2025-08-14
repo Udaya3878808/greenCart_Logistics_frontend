@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDriver } from "../context/driverContext";
+import { toast } from "react-hot-toast";
 
 const Drivers = () => {
   const { getAllDriver, createDriver, updateDriver, deleteDriver } =
@@ -29,6 +30,7 @@ const Drivers = () => {
   const handleAdd = async () => {
     await createDriver(newDriver);
     setNewDriver({ name: "", currentShiftHours: 0, pastWeekHours: 0 });
+    toast.success("Route successfully added");
     fetchDrivers();
   };
 

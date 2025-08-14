@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRoute } from "../context/routeContext";
+import { toast } from "react-hot-toast";
 
 const Routes = () => {
   const { getAllRoutes, createRoute, updateRoute, deleteRoute } = useRoute();
@@ -37,6 +38,7 @@ const Routes = () => {
       trafficLevel: "",
       baseTimeMinutes: 0,
     });
+    toast.success("Route successfully added");
     fetchRoutes();
   };
 
