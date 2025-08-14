@@ -30,7 +30,7 @@ const Drivers = () => {
   const handleAdd = async () => {
     await createDriver(newDriver);
     setNewDriver({ name: "", currentShiftHours: 0, pastWeekHours: 0 });
-    toast.success("Route successfully added");
+    toast.success("Driver successfully added");
     fetchDrivers();
   };
 
