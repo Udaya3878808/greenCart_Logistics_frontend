@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "./compontents/ProtectedRouter";
 import Sidebar from "./compontents/Sidebar";
 import Navbar from "./compontents/Navbar";
@@ -19,6 +19,7 @@ function App() {
           <Navbar />
           <div className="p-6 flex-1 overflow-y-auto">
             <Routes>
+              <Route path="/" element={<Navigate to="/dashboard" replace />} />
               {/* Public Routes */}
               <Route path="/auth" element={<AuthPages />} />
 
