@@ -15,7 +15,6 @@ export const RouteProvider = ({ children }) => {
   const createRoute = async (data) => {
     try {
       const res = await createRouteApi(data);
-      toast.success(res.data.message);
       return res.data;
     } catch (error) {
       toast.error(error.response?.data?.error || "Create route failed");

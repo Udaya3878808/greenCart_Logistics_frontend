@@ -15,7 +15,6 @@ export const DriverProvider = ({ children }) => {
   const createDriver = async (data) => {
     try {
       const res = await createDriversApi(data);
-      toast.success(res.data.message);
       return res.data;
     } catch (error) {
       toast.error(error.response?.data?.error || "create Driver Failed");

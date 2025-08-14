@@ -15,7 +15,6 @@ export const OrderProvider = ({ children }) => {
   const createOrder = async (data) => {
     try {
       const res = await createOrdersApi(data);
-      toast.success(res.data.message);
       return res.data;
     } catch (error) {
       toast.error(error.response?.data?.error || "Create order failed");
